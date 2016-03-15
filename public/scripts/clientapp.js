@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     $('#submit-button').on('click', postData);
 
-  //  $('#display').on('click', getData)
+    $('#display').on('click', getData);
 
 });
 
@@ -24,6 +24,7 @@ function postData() {
             if(data) {
                 // everything went ok
                 console.log('from server:', data);
+
                 getData();
             } else {
                 console.log('error');
@@ -34,6 +35,7 @@ function postData() {
 }
 
 function getData() {
+    $('.container').empty();
     $.ajax({
         type: 'GET',
         url: '/people',
